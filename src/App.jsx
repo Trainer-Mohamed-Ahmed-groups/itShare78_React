@@ -1,30 +1,23 @@
-import reactLogo from "./assets/react.svg";
 import "./App.scss";
-import Home from "./views/Home";
-import TodoList from "./components/Solve";
+import Conditional from "./components/Conditional";
+import Course from "./components/Course";
+import Details from "./components/Details";
+import Gallery from "./views/Gallery";
 
 function App() {
-  var myName = "Mohamed Ahmed";
-
-  var person = {
-    name: "Omar",
-    age: 20,
-  };
-
   return (
-    <>
-      <img src={reactLogo} alt="" />
-      <div className="test">Hello React</div>
-      <div>Hello again</div>
-      <input type="text" />
-      {myName}
-      <div>
-        {person.name.toUpperCase()}
-        {person.age}
-      </div>
-      <Home />
-      <TodoList />
-    </>
+    <div>
+      {/* <Course courseName="HTML" desc="Hyper text markup lang" />
+      <Course courseName="React" desc="SPA" />
+      <Course courseName="JS">
+        <div>This is JS</div>
+      </Course>
+
+      <Details />
+
+      <Gallery /> */}
+      <Conditional />
+    </div>
   );
 }
 
