@@ -1,13 +1,8 @@
-.test {
-  font-weight: bold;
-  color: #f00;
+.dark {
+  background-color: #2a2a2a;
+  color: #fff;
 }
-img {
-  width: 200px;
-}
-
-.homePage {
-  .child {
-    color: #00f;
-  }
+.light {
+  background-color: #999;
+  color: #000;
 }

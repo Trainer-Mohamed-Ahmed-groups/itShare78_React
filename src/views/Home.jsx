@@ -1,10 +1,16 @@
-import Intro from "../components/Intro";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  let inputRef = useRef();
+
+  useEffect(() => {
+    console.log(inputRef.current);
+  }, []);
+
   return (
-    <div className="homePage">
-      <Intro />
-      <div className="child">I am child</div>
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={()=> inputRef.current.focus()}>Click me</button>
     </div>
   );
 }

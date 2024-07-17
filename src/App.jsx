@@ -1,22 +1,31 @@
+import { useContext, useState } from "react";
 import "./App.scss";
-import Conditional from "./components/Conditional";
-import Course from "./components/Course";
-import Details from "./components/Details";
-import Gallery from "./views/Gallery";
+import UseEffectComponent from "./components/UseEffectComponent";
+import UseMemoExplain from "./components/UseMemoExplain";
+import UseCallBackExplain from "./components/UseCallBackExplain";
+import SiteNav from "./Layout/SiteNav";
+import { Route, Routes } from "react-router-dom";
+import Home from "./views/Home";
+import About from "./views/About";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
+  const [show, setShow] = useState(true);
+  let theme = useContext(ThemeContext);
+
   return (
-    <div>
-      {/* <Course courseName="HTML" desc="Hyper text markup lang" />
-      <Course courseName="React" desc="SPA" />
-      <Course courseName="JS">
-        <div>This is JS</div>
-      </Course>
+    <div className={theme.theme}>
+      <SiteNav />
+      {/* <button onClick={() => setShow(!show)}>{show ? "Hide" : "Show"}</button>
+      {show && <UseEffectComponent />} */}
 
-      <Details />
+      {/* <UseMemoExplain /> */}
+      {/* <UseCallBackExplain /> */}
 
-      <Gallery /> */}
-      <Conditional />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
